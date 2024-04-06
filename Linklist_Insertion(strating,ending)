@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node*next;
+  Node(int val){
+      data=val;
+      next=NULL;
+  }
+};
+
+//insertion atstarting
+
+void InsertHead(Node* &head,int val){
+    Node*new_node=new Node(val);
+    new_node->next=head;
+    head=new_node;
+    }
+
+//Display
+
+    void Display(Node*head){
+        Node*temp=head;
+        while(temp!=NULL){
+            cout<<"the value is : "<<temp->data<<"->";
+            temp=temp->next;
+        }
+        cout<<"Null"<<endl;
+    }
+
+//insertion at end
+
+
+  void InsertTail(Node* &head,int val){
+      Node*new_node=new Node(val);
+      Node*temp=head;
+      while(temp->next!=NULL){
+          temp=temp->next;
+      }
+      temp->next=new_node;
+  }
+        
+    
+    int main(){
+        Node*head=NULL;
+        InsertHead(head,1);
+         Display(head);
+         InsertHead(head,5);
+         Display(head);
+          InsertHead(head,9);
+         Display(head);
+         InsertTail(head,59);
+         Display(head);
+         return 0;
+         
+    }
