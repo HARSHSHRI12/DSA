@@ -1,0 +1,46 @@
+<!-- <!doctype html> 
+<html>
+<body>
+<script>
+var data=[12,34,56,78,9,0,7];
+var newEl1 =13;
+var newEl2 =31;
+var position =2;
+var position1 =5;
+for(var i=data.length;i>=0;i--){
+//document.write(data[i]+"<br>")
+if(i>=position && position1){
+data[i+2]=data[i]
+if(i==position && position1){
+data[i]=newEl12 
+}
+}
+}
+document.write(data)
+</script>
+</body>
+ </html> -->
+ 
+ <!doctype html>
+<html>
+<body>
+<script>
+    var data = [12, 34, 56, 78, 9, 0, 7];
+    var newEl1 = 13;
+    var newEl2 = 31;
+    var position = 2;
+    var position1 = 5;
+
+    // Insert newEl1 at position
+    data.splice(position, 0, newEl1);
+
+    // Adjust position1 due to the new element
+    position1++;
+
+    // Insert newEl2 at position1
+    data.splice(position1, 0, newEl2);
+
+    document.write(data);
+</script>
+</body>
+</html>

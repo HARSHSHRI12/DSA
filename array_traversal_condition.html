@@ -1,0 +1,44 @@
+ <!doctype html> 
+<html>
+<title>Traversal with condition</title>
+<body>
+<input type="text" id="element">
+<button onclick="Traversal()">Check</button>
+<script>
+function Traversal(){
+var data=[1,6,4,67,5,4,87,98,56,5,54,0,1,12];
+var el=parseInt(document.getElementById("element").value);
+if(!isNaN(el)&& el>=0 && el<data.length){
+alert(data[el] );
+}
+else{
+alert("Involide input")
+}
+}
+</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html> 
+<html>
+<head>
+  <title>Traversal with condition</title>
+</head>
+<body>
+  <input type="text" id="element">
+  <button onclick="traversal()">Check</button>
+
+  <script>
+    function traversal() {
+      var data = [1, 6, 4, 67, 5, 4, 87, 98, 56, 5, 54, 0, 1, 12];
+      var el = parseInt(document.getElementById("element").value);
+      
+      if (!isNaN(el) && el >=0 && el < data.length) {
+        alert(data[el]);
+      } else {
+        alert("Invalid input");
+      }
+    }
+  </script>
+</body>
+</html>-->
