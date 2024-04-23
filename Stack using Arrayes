@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+class stack{
+    int n;
+    int*arr;
+    int top;
+    public:
+    stack(int size){
+        n=size;
+        arr=new int[size];
+        top=-1;
+    }
+    void push(int data){
+        if(top==n-1){
+            cout<<"Stack is overflow\n";
+        }
+        top++;
+        arr[top]=data;
+    }
+    void pop(){
+        if(top==-1){
+            cout<<"Stack is underflow\n";
+            return;
+        }
+        top--;
+    }
+    int getTop(){
+         if(top==-1){
+            cout<<"Stack is underflow";
+            return  -1;
+        }
+       return arr[top];
+        
+    }
+    bool isEmpty(){
+        return top==-1;
+    }
+    int size(){
+        return top+1;
+    }
+    bool isFull(){
+        return top=n-1;
+    }
+};
+int main(){
+    stack st(5);
+   st. push(3);
+    st.push(4);
+    st.push(5);
+    st.push(6);
+    cout<<"top is :"<<st.getTop()<<endl;
+    st.pop();
+      cout<<"top is :"<<st.getTop()<<endl;
+      st.push(8);
+      st.push(9);
+      cout<<"top is :"<<st.getTop()<<endl;
+      st. push(3);
+    st.push(4);
+    st.push(5);
+    st.push(6);
+    cout<<"top is :"<<st.getTop()<<endl;
+     st.pop();
+      st.pop();
+       st.pop();
+        st.pop();
+        st.pop();
+      st.pop();
+        cout<<"top is :"<<st.getTop()<<endl;
+    return 0;
+}
