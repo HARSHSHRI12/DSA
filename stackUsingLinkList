@@ -1,0 +1,76 @@
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node*next;
+    Node(int d){
+        data=d;
+        next=NULL;
+    }
+};
+class stack{
+    Node*head;
+    int capasity;
+    int currentSize;
+    public:
+         stack(int c){
+             currentSize=0;
+             capasity=c;
+             head=NULL;
+         }
+         bool isEmpty(){
+             return head==NULL;
+         }
+         bool isFull(){
+             return currentSize==capasity;
+         }
+         void push(int data){
+             Node*new_node=new Node(data);
+             new_node->next=head;
+             head=new_node;
+             currentSize++;
+         }
+         int pop(){
+             if(head==NULL){
+                 cout<<"Underflow\n";
+                 return -1;
+             }
+             Node*new_head=head->next;
+             head->next=NULL;
+             Node*tobeRemove=head;
+             int result=tobeRemove->data;
+             delete tobeRemove;
+             head=new_head;
+             currentSize--;
+             return result;
+         }
+         int size(){
+             return currentSize;
+         }
+         int Top(){
+             if(head==NULL){
+                 cout<<"Underflow\n";
+                 return -1;
+             }
+             return head->data;
+             
+         }
+};
+int main(){
+    stack st(5);
+    st.push(3);
+     st.push(4);
+      st.push(5);
+       st.push(6);
+       cout<<st.Top()<<endl;
+       st.push(5);
+        cout<<st.Top()<<endl;
+        st.pop();
+          st.pop();
+           cout<<st.Top()<<endl;
+           st.pop();
+          st.pop();
+           cout<<st.Top()<<endl;
+    
+}
