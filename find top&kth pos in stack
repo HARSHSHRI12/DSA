@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class stack{
+    public:
+    int capasity;
+    int*arr;
+    int top;
+    stack(int n){
+        capasity=n;
+        arr=new int[capasity];
+        top=-1;
+    }
+    void push(int data){
+        if(top==capasity-1){
+            cout<<"stack is overflow";
+            return;
+        }
+        top++;
+        arr[top]=data;
+    }
+    void pop(){
+        if(top==-1){
+            cout<<"stack is underflow";
+            return;
+        }
+        top--;
+    }
+    int getTop(){
+        if(top==-1){
+            cout<<"stack is underflow";
+            return -1;
+        }
+        return arr[top];
+    }
+    int getKthpos(int k){
+        if(k>top+1||k<0){
+            cout<<"Invalid input please check and enter valid input"<<endl;
+            return capasity-1;
+        }
+        return arr[top-k+1];
+    }
+};
+int main(){
+    stack st(5);
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.push(5);
+    cout<<st.getTop()<<endl;
+    cout<<st.getKthpos(6)<<endl;
+    return 0;
+}
