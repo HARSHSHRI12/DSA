@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class stack{
+    public:
+    int*arr;
+    int top;
+    int capasity;
+    stack(int n){
+        capasity=n;
+        arr=new int[capasity];
+        top=-1;
+    }
+    void push(int data){
+        if(top==capasity-1){
+            cout<<"stack is overlod"<<endl;
+            return;
+        }
+        top++;
+        arr[top]=data;
+    }
+    int pop(){
+        if(top==-1){
+            cout<<"stack is underflow"<<endl;
+            return -1;
+        }
+        int poped=arr[top];
+        top--;
+        return poped;
+    }
+    void convert2binary(int num){
+        while(num!=0){
+            push(num%2);    
+            num=num/2;
+        }
+    }
+    void displaybinary(){
+        while(top!=-1){
+            cout<<pop();
+        }
+        cout<<endl;
+    }
+    
+};
+int main(){
+    stack s(5);
+     s.convert2binary(9);
+     s.displaybinary();
+   
+    return 0;
+}
