@@ -1,0 +1,143 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+ vector<int> vctr;
+
+void Insert(){
+    for(int i=0;i<5;i++){
+        int element;
+         cout<<"Enter element:";
+        cin>>element;
+         vctr.push_back(element);
+    }
+    for(int i=0;i<vctr.size();i++){
+        cout<<vctr[i]<<" ";
+    }
+    cout<<endl;
+}
+void InsertAtPosition(){
+   vctr.push_back(1);
+   vctr.push_back(2);
+   vctr.push_back(3);
+   vctr.push_back(4);
+   vctr.push_back(5);
+   vctr.push_back(6);
+    int pos,ele;
+    cout<<"Enter position to be inserted :"<<endl;
+    cin>>pos;
+    cout<<"Enter element to be inserted :"<<endl;
+    cin>>ele;
+    if(pos>=0 and pos<=vctr.size()){
+        vctr.insert(vctr.begin()+pos,ele);
+    }
+    else{
+        cout<<"Invalide position."<<endl;
+    }
+
+    for(int i=0;i<vctr.size();i++){
+        cout<<vctr[i]<<" ";
+    }
+    cout<<endl;
+}
+ void findSize(){
+   vctr.push_back(1);
+   vctr.push_back(2);
+   vctr.push_back(3);
+     cout<<vctr.size()<<endl;
+ }
+ void findCapacity(){
+   vctr.push_back(1);
+   vctr.push_back(2);
+   vctr.push_back(3);
+     cout<<vctr.capacity()<<endl;
+ }
+ void DeleteBack(){
+   vctr.push_back(1);
+   vctr.push_back(2);
+   vctr.push_back(3);
+   vctr.pop_back();
+   for(int i=0;i<vctr.size();i++){
+       cout<<vctr[i]<<endl;
+   }
+ }
+    void Deletepos(){
+   vctr.push_back(1);
+   vctr.push_back(2);
+   vctr.push_back(3);
+        int pos;
+        cout<<"Enter position to be deleted :"<<endl;
+        cin>>pos;
+        vctr.erase(vctr.end()-pos);
+            for(int i=0;i<vctr.size();i++){
+                cout<<vctr[i]<<endl;
+            }
+    }
+     void Deleteall(){
+   vctr.push_back(1);
+   vctr.push_back(2);
+   vctr.push_back(3);
+   vctr.push_back(4);
+   vctr.push_back(5);
+   vctr.push_back(6);
+         cout<<"after deleting ---"<<endl;
+         for(int i=0;i<vctr.size();i++){
+             cout<<vctr[i]<<" ";
+         }
+         cout<<endl;
+         cout<<"befor deleting all element in vector ---"<<endl;
+         vctr.clear();
+         cout<<"Empty...."<<endl;
+     }
+     
+ 
+int main(){
+   
+    int get;
+  for(int i=0;i<8;i++){
+    cout<<"hello welcome to Vector Operations :"<<endl;
+    cout<<"--------------------------------------------"<<endl;
+    cout<<"what do you want.?"<<endl;
+    cout<<"----  ---  ------  -------"<<endl;
+    cout<<"1. Insertion at the back"<<endl;
+    cout<<"2. Insertion at the position"<<endl;
+    cout<<"3. find the size of vector"<<endl;
+    cout<<"4. find the capacity of the vector"<<endl;
+    cout<<"5. Delete element at the back"<<endl;
+    cout<<"6. Delete element at the position"<<endl;
+    cout<<"7. Delete All element in vector"<<endl;
+    cin>>get;
+  
+    if(get==1 ){
+        cout<<"insertion operation is executed wait......"<<endl; 
+        Insert();
+        cout<<vctr.size()<<endl;
+       
+    }
+    else if(get==2){
+    cout<<"insertion At position operation is executed wait......"<<endl;
+    InsertAtPosition();
+    }
+    else if(get==3){
+    cout<<"find Size operation is executed wait......"<<endl;
+    findSize();
+    }
+    else if(get==4){
+    cout<<"findi capacity operation is executed wait......"<<endl;
+    findCapacity();
+    }
+     else if(get==5){
+    cout<<"Delete at back operation is executed wait......"<<endl;
+    DeleteBack();
+    }
+     else if(get==6){
+    cout<<"Delete at position operation is executed wait......"<<endl;
+    Deletepos();
+    }
+     else if(get==7){
+    cout<<"Delete all element operation is executed wait......"<<endl;
+    Deleteall();
+    }
+  }
+return 0;
+}
