@@ -1,0 +1,23 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>vname;
+    for(int i=0;i<5;i++){
+        int element;
+        cout<<"Enter element :";
+        cin>>element;
+        vname.push_back(element);
+    }
+    int x;
+    int occurrence=-1;
+    cout<<"Enter x :";
+    cin>>x;
+    for(int i=vname.size();i>=0;i--){
+        if(vname[i]==x){
+            occurrence=i;
+        }
+    }
+    cout<<"the last occurrence of the element :"<<x<<" "<<"At :"<<occurrence<<endl;
+    return 0;
+}
