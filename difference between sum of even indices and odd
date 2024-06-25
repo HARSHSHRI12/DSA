@@ -1,0 +1,28 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>vname;
+    int difference;
+    int evensum=0;
+    int oddsum=0;
+    for(int i=0;i<5;i++){
+        int element;
+        cout<<"Enter element :";
+        cin>>element;
+        vname.push_back(element);
+    }
+   for(int i=0;i<vname.size();i++){
+       if(i%2==0){
+           evensum+=vname[i];
+       }
+       else if(i%2!=0){
+            oddsum+=vname[i];
+       }
+   }
+   difference=evensum-oddsum;
+   cout<<"the sum of the element of even index is :"<<evensum<<endl;
+   cout<<"the sum of the element of even index is :"<<oddsum<<endl;
+   cout<<"The difference between the sum of element of even indeces to the sum of odd indices is :"<<difference<<endl;
+    return 0;
+}
