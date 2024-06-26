@@ -1,0 +1,30 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class solution{
+    public:
+    int removeElement(vector<int>&num,int val){
+        if(num.empty()){
+            return 0;
+        }
+       int k=0;
+        for(int i=0;i<num.size();++i){
+            if(num[i]!=val){
+             num[k++]=num[i];
+            }
+        }
+        return k;
+    }
+};
+int main(){
+    vector<int>num={3,2,2,3};
+   int val=3;
+    solution solu;
+    int newlength=solu.removeElement(num,val);
+    cout<<"length is :"<<val<<":"<<newlength<<endl;
+    cout<<"modify vector is :"<<endl;
+    for(int i=0;i<newlength;i++){
+        cout<<num[i]<<endl;
+    }
+    return 0;
+}
