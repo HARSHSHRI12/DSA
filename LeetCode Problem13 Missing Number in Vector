@@ -1,0 +1,22 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class solution{
+    public:
+    int missingNumber(vector<int>&nums ){
+        int n=nums.size();
+       int sum_n=n*(n+1)/2;
+       int sum_num=0;
+       for(int num:nums){
+           sum_num+=num;
+       }
+       return sum_n-sum_num;
+    }
+};
+int main(){
+    vector<int>nums={9,6,4,2,3,5,7,0,1};
+    solution sol;
+    int result=sol.missingNumber(nums);
+    cout<<result<<endl;
+    return 0;
+}
