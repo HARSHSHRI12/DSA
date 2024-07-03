@@ -1,0 +1,20 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class solution{
+    public:
+    int singleNumber(vector<int>&nums){
+        int val=0;
+        for(int num : nums){
+            val^=num;
+        }
+        return val;
+    }
+};
+int main(){
+    vector<int>nums={1};
+    solution sol;
+    int result=sol.singleNumber(nums);
+    cout<<"Not twice of any number is :"<<result<<endl;
+    return 0;
+}
