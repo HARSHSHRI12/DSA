@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+struct listNode{
+    int val;
+    listNode*next;
+    listNode(int x){
+        val=x;
+        next=NULL;
+    }
+};
+class solution{
+    public:
+    listNode*DeleteDuplicates(listNode*head){
+        listNode*current=head;
+       while(current!=NULL && current->next!=NULL){
+           if(current->val==current->next->val){
+               listNode*temp=current->next;
+               current->next=current->next->next;
+               delete temp;
+           }
+           else{
+               current=current->next;
+           }
+       }
+       return head;
+    }
+};
+ void Insert(listNode* &head,int data){
+        listNode*new_node=new listNode(data);
+        new_node->next=head;
+        head=new_node;
+    }
+    void Display(listNode*head){
+        listNode*temp=head;
+        while(temp!=NULL){
+            cout<<temp->val<<"->";
+            temp=temp->next;
+        }
+        cout<<"NULL"<<endl;
+    }
+int main(){
+    listNode*head=NULL;
+    solution sol;
+    Insert(head,2);
+    Insert(head,1);
+    Insert(head,1);
+    Display(head);
+    listNode*result=sol.DeleteDuplicates(head);
+Display(result);
+    
+    return 0;
+}
