@@ -1,0 +1,25 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+class solution{
+    public:
+    vector<int>intersection(vector<int>nums1,vector<int>nums2){
+        vector<int>result;
+       sort(nums1.begin(),nums1.end());
+       sort(nums2.begin(),nums2.end());
+       
+       set_intersection(begin(nums1),end(nums1),begin(nums2),end(nums2),inserter(result,end(result)));
+       for_each(begin(result),end(result),[](int x){
+           cout<<x<<" ";
+       });
+       return result;
+    }
+};
+int main(){
+    vector<int>nums1={1,2,2,1};
+    vector<int>nums2={2,2};
+    solution sol;
+    vector<int>result=sol.intersection(nums1,nums2);
+    return 0;
+}
