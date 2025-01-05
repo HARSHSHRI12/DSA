@@ -1,0 +1,26 @@
+#include<iostream>
+#include<climits>
+using namespace std;
+class solution{
+    public:
+    int maxsubsumarr(int arr[],int size){
+        int maximum=INT_MIN;
+        int currentsum=0;
+        for(int i=0;i<size;i++){
+            currentsum+=arr[i];
+            maximum=max(currentsum,maximum);
+            if(currentsum<0){
+                currentsum=0;
+            }
+        }
+         return maximum;
+    }
+};
+int main(){
+    int arr[]={3,-4,5,4,-1,7,-8};
+    int size=7;
+    solution sol;
+    int result=sol.maxsubsumarr(arr,size);
+    cout<<result;
+    return 0;
+}
