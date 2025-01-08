@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class solution{
+    public:
+    double calxpown(double x,int n){
+        long binform=n; // use binform for binaru representation of n
+        double ans=1;
+        //for handle negative powers
+        if(binform<0){ 
+            x=1/x;
+            binform=-binform;
+        }
+        //// Binary exponentiation logic
+        while(binform>0){
+            if(binform%2==1){  //if the current bit is 1
+                ans*=x;
+            }
+            x*=x; //square the base
+            binform/=2; //move to the next bit
+        }
+        return ans;
+    }
+};
+int main(){
+    long n=5;
+    double x=2.000;
+    solution sol;
+    double result=sol.calxpown(x,n);
+    cout<<result;
+    return 0;
+}
