@@ -1,0 +1,28 @@
+#include<iostream>
+#include<climits>
+#include<vector>
+using namespace std;
+class solution{
+    public:
+    int maxProfite(vector<int>price){
+        int buy=INT_MAX;
+        int maxProfit=0;
+        for(int i=0;i<price.size();i++){
+            if(price[i]<buy){
+                buy=price[i];
+            }
+            else{
+                maxProfit=max(maxProfit,price[i]-buy);
+            }
+        }
+          return maxProfit;
+    }
+};
+int main(){
+    vector<int>price={7,1,5,3,6,4};
+    solution sol;
+    int result=sol.maxProfite(price);
+    cout<<result;
+    return 0;
+    
+}
