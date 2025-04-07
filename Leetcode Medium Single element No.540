@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<vector>
+using namespace std;
+class solution{
+  public:
+  int SingleElementInArr(vector<int>&nums){
+      int st=0,end=nums.size()-1;
+      while(st<end){
+          int mid=st+(end-st)/2;
+          if(mid%2==1)
+              mid--;
+            if(nums[mid]==nums[mid+1])
+            st=mid+2;
+            else{
+                end=mid;
+            }
+      }
+      return nums[st];
+  }  
+};
+int main() {
+   solution sol;
+   vector<int>nums={3,3,7,7,10,11,11};
+   int result=sol.SingleElementInArr(nums);
+   cout<<"single element is :"<<result;
+    return 0;
+}
